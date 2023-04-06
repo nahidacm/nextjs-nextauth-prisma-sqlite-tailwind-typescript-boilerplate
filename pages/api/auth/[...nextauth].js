@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
@@ -25,7 +25,7 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const { email, password } = req.body;
-        
+
         const user = await prisma.user.findUnique({ where: { email } });
 
         if (!user || user.password !== password) {
@@ -36,6 +36,7 @@ export const authOptions = {
       },
     }),
   ],
+  adapter: PrismaAdapter(prisma),
 };
 
 export default NextAuth(authOptions);
