@@ -1,6 +1,5 @@
 import Head from "next/head";
 import styles from "@/styles/Home.module.css";
-import LoginBtn from "../components/login-btn";
 import Register from "../components/register";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Register/>
-        <LoginBtn />
       </main>
     </>
   );

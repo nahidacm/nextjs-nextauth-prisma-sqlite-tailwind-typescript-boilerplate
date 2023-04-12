@@ -1,6 +1,6 @@
 // pages/api/register.ts
 import { NextApiHandler } from 'next'
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
