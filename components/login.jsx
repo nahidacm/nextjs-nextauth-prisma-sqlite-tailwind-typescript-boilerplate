@@ -18,6 +18,8 @@ export default function Login() {
 
     if (result?.error) {
       console.error("Failed to log in:", result.error);
+    }else{
+      console.log(result);
     }
   };
 
