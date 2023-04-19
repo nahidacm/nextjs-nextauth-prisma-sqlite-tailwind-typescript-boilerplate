@@ -26,3 +26,6 @@ Payload:
     "password": "Pa$$w0rd!"
 }
 ```
+
+#### DashWind Documentation
+https://tailwind-dashboard-template-dashwind.vercel.app/documentation
